@@ -8,7 +8,7 @@ public abstract class Entity implements IdGenerator {
     private String id;
 
     public Entity() {
-
+    	id = generateId();
     }
 
     public Entity(String id) {

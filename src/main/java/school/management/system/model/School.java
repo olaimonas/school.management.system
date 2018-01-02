@@ -17,6 +17,10 @@ public class School extends Entity {
         this.teachers = teachers;
         this.students = students;
     }
+    
+    public School(String name) {
+    	
+    }
 
     @Override
     public String generateId() {
