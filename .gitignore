@@ -1,0 +1,9 @@
+# Ignore all .iml files
+*.iml
+/target/
+
+# Ignore all .classpath files
+*.classpath
+*.project
+/settings
+/.idea/
