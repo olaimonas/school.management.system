@@ -2,7 +2,6 @@ package school.management.system.factory.impl;
 
 import school.management.system.factory.SchoolFactory;
 import school.management.system.util.impl.IdGenerator;
-import school.management.system.util.impl.IdGeneratorImpl;
 import school.management.system.model.School;
 import school.management.system.model.Student;
 import school.management.system.model.Teacher;
@@ -14,7 +13,6 @@ import java.util.stream.IntStream;
 public class SchoolFactoryImpl implements SchoolFactory {
 
     private PersonFactoryImpl personFactory = new PersonFactoryImpl();
-    private IdGenerator idGenerator = new IdGeneratorImpl();
 
     @Override
     public School createSchool(String name, int numTeachers, int numStudents) {
@@ -27,14 +25,13 @@ public class SchoolFactoryImpl implements SchoolFactory {
 
         // Teachers
         IntStream.range(0, numTeachers)
-                .forEach(i -> teacherList.add(personFactory.createTeacher("Teacher " + i, "Teacher " + i, idGenerator.generateTeacherId())));
+                .forEach(i -> teacherList.add(personFactory.createTeacher("Teacher " + i, "Teacher " + i)));
 
         // Students
         IntStream.range(0, numStudents)
-                .forEach(i -> studentList.add(personFactory.createStudent("Student " + i, "Student " + i, idGenerator.generateStudentId())));
+                .forEach(i -> studentList.add(personFactory.createStudent("Student " + i, "Student " + i)));
 
         school = new School(name, teacherList, studentList);
-        school.setId(idGenerator.generateSchoolId());
         return school;
     }
 

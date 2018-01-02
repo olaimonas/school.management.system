@@ -1,5 +1,7 @@
 package school.management.system.model;
 
+import school.management.system.util.impl.IdGenerator;
+
 public class Student extends Person {
 
     private int grade;
@@ -10,6 +12,15 @@ public class Student extends Person {
     public Student(String name, String surname, String id) {
         super(name, surname, id);
         totalFeesPaid = new Money(0);
+    }
+
+    public Student(String name, String surname) {
+        super(name, surname);
+    }
+
+    @Override
+    public String generateId() {
+        return IdGenerator.STUDENT_ID_PREIFX + IdGenerator.random.nextInt(IdGenerator.BOUND);
     }
 
     public void payFee(double amount) {
@@ -44,4 +55,5 @@ public class Student extends Person {
     public String toString() {
         return "Student " + getName() + " " + getSurname() + ", id " + getId() + ".";
     }
+
 }

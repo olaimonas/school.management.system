@@ -4,14 +4,13 @@ import org.junit.Test;
 import school.management.system.factory.SchoolFactory;
 import school.management.system.model.School;
 import school.management.system.util.impl.IdGenerator;
-import school.management.system.util.impl.IdGeneratorImpl;
 
 import static org.junit.Assert.*;
 
 public class SchoolFactoryImplTest {
 
     private PersonFactoryImpl personFactory = new PersonFactoryImpl();
-    private IdGenerator idGenerator = new IdGeneratorImpl();
+
     SchoolFactory schoolFactory = new SchoolFactoryImpl();
 
     @Test

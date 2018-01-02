@@ -1,5 +1,7 @@
 package school.management.system.model;
 
+import school.management.system.util.impl.IdGenerator;
+
 import java.util.List;
 
 public class School extends Entity {
@@ -14,6 +16,11 @@ public class School extends Entity {
         this.name = name;
         this.teachers = teachers;
         this.students = students;
+    }
+
+    @Override
+    public String generateId() {
+        return IdGenerator.SCHOOL_ID_PREIFX + IdGenerator.random.nextInt(IdGenerator.BOUND);
     }
 
     public Administration getAdministration() {
@@ -60,4 +67,5 @@ public class School extends Entity {
     public String toString() {
         return getName();
     }
+
 }

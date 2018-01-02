@@ -2,16 +2,14 @@ package school.management.system.model;
 
 import school.management.system.exception.InsufficientProfitException;
 import school.management.system.util.impl.IdGenerator;
-import school.management.system.util.impl.IdGeneratorImpl;
 
 import java.math.BigDecimal;
 
-public class FinanceManagement extends Entity {
+public class FinanceManagement extends Department {
 
     private Money totalIncome = new Money(0);
     private Money totalExpenses = new Money(0);
     private Money profit = new Money(0);
-    private IdGenerator idGenerator = new IdGeneratorImpl();
     private Stipend stipend = new Stipend();
 
     public FinanceManagement() {

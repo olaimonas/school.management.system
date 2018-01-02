@@ -1,6 +1,6 @@
 package school.management.system.model;
 
-public class Administration extends Entity {
+public class Administration extends Department {
 
     private int numberOfTeachers;
     private int numberOfStudents;

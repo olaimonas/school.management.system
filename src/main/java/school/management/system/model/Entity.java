@@ -2,16 +2,13 @@ package school.management.system.model;
 
 import school.management.system.exception.InvalidIdException;
 import school.management.system.util.impl.IdGenerator;
-import school.management.system.util.impl.IdGeneratorImpl;
 
-public abstract class Entity {
+public abstract class Entity implements IdGenerator {
 
     private String id;
-    private IdGenerator idGenerator = new IdGeneratorImpl();
 
     public Entity() {
-        id = idGenerator.generateDepartmentId();
-        setId(id);
+
     }
 
     public Entity(String id) {

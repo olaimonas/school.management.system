@@ -1,6 +1,7 @@
 package school.management.system.model;
 
 import school.management.system.exception.InvalidGradeException;
+import school.management.system.util.impl.IdGenerator;
 
 import java.math.BigDecimal;
 
@@ -12,6 +13,15 @@ public class Teacher extends Person {
 
     public Teacher(String name, String surname, String id) {
         super(name, surname, id);
+    }
+
+    public Teacher(String name, String surname) {
+        super(name, surname);
+    }
+
+    @Override
+    public String generateId() {
+        return IdGenerator.TEACHER_ID_PREIFX + IdGenerator.random.nextInt(IdGenerator.BOUND);
     }
 
     public void setStudentGrade(Student student, int grade) {
@@ -42,4 +52,5 @@ public class Teacher extends Person {
     public String toString() {
         return "Teacher " + getName() + " " + getSurname() + ", id " + getId() + ".";
     }
+
 }

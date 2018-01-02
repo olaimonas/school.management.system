@@ -10,6 +10,10 @@ public abstract class Person extends Entity {
         this.surname = surname;
     }
 
+    public Person(String name, String surname) {
+
+    }
+
     public String getName() {
         return name;
     }
