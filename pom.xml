@@ -24,7 +24,7 @@
             </resource>
         </resources>
     </build>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
@@ -45,4 +45,7 @@
         </dependency>
     </dependencies>
     
+    <modules>
+    	<module>module</module>
+    </modules>
 </project>

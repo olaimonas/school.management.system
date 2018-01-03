@@ -8,10 +8,12 @@ public class Student extends Person {
     private Money totalFeesPaid;
     private Subject subject;
     private Diary diary;
+    private Money stipend;
 
     public Student(String name, String surname, String id) {
         super(name, surname, id);
         totalFeesPaid = new Money(0);
+        stipend = new Money(0);
     }
 
     public Student(String name, String surname) {
@@ -51,7 +53,23 @@ public class Student extends Person {
         this.diary = diary;
     }
 
-    @Override
+    public Money getTotalFeesPaid() {
+		return totalFeesPaid;
+	}
+
+	public void setTotalFeesPaid(Money totalFeesPaid) {
+		this.totalFeesPaid = totalFeesPaid;
+	}
+
+	public Money getStipend() {
+		return stipend;
+	}
+
+	public void setStipend(Money stipend) {
+		this.stipend = stipend;
+	}
+
+	@Override
     public String toString() {
         return "Student " + getName() + " " + getSurname() + ", id " + getId() + ".";
     }

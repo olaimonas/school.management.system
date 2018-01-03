@@ -10,7 +10,6 @@ public class FinanceManagement extends Department {
     private Money totalIncome = new Money(0);
     private Money totalExpenses = new Money(0);
     private Money profit = new Money(0);
-    private Stipend stipend = new Stipend();
 
     public FinanceManagement() {
         super();
@@ -20,16 +19,8 @@ public class FinanceManagement extends Department {
         setTotalExpenses(getTotalExpenses().add(teacher.getSalary()));
     }
 
-    public void payBasicStipend(Student student) {
-        setTotalExpenses(getTotalExpenses().add(stipend.getBasicStipend()));
-    }
-
-    public void payHigherStipend(Student student) {
-        setTotalExpenses(getTotalExpenses().add(stipend.getHigherStipend()));
-    }
-
-    public void payHighestStipend(Student student) {
-        setTotalExpenses(getTotalExpenses().add(stipend.getHighestStipend()));
+    public void payStipend(Student student) {
+        setTotalExpenses(getTotalExpenses().add(student.getStipend()));
     }
 
     // Use only to count the profit
@@ -63,14 +54,6 @@ public class FinanceManagement extends Department {
 
     public void setProfit(Money profit) {
         this.profit = profit;
-    }
-
-    public Stipend getStipend() {
-        return stipend;
-    }
-
-    public void setStipend(Stipend stipend) {
-        this.stipend = stipend;
     }
 
 }
