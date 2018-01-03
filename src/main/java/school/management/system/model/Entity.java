@@ -7,7 +7,6 @@ public abstract class Entity implements IdGenerator {
 
     private String id;
 
-    // 1st construct
     public Entity() {
     	id = generateId();
     }

@@ -12,6 +12,7 @@ public class PersonFactoryImpl implements PersonFactory {
         return new Student(name, surname, id);
     }
 
+    @Override
     public Student createStudent(String name, String surname) {
         return new Student(name, surname);
     }
@@ -21,6 +22,7 @@ public class PersonFactoryImpl implements PersonFactory {
         return new Teacher(name, surname, id);
     }
 
+    @Override
     public Teacher createTeacher(String name, String surname) {
         return new Teacher(name, surname);
     }
