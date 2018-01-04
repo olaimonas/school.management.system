@@ -1,5 +1,6 @@
 package school.management.system.model;
 
+import school.management.system.ctx.Registry;
 import school.management.system.util.impl.IdGenerator;
 
 import java.util.List;
@@ -16,10 +17,12 @@ public class School extends Entity {
         this.name = name;
         this.teachers = teachers;
         this.students = students;
+        Registry.add(this);
     }
     
     public School(String name) {
-    	
+    	this.name = name;
+    	Registry.add(this);
     }
 
     @Override

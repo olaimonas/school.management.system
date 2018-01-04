@@ -1,25 +1,23 @@
 package school.management.system.ctx;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+
+import school.management.system.model.School;
 
 public class Registry {
 
-    private static Map<Class, Object> objects = new HashMap<>();
+    private static List<School> schoolObjectList = new ArrayList<>();
 
-//    static {
-//
-//        add(IdGenerator.class, new IdGeneratorImpl());
-//
-//    }
-
-    public static <T> boolean add(Class key, T value) {
-        objects.put(value.getClass(), value);
-        return objects.containsKey(value.getClass());
+    public static void add(School school) {
+    	schoolObjectList.add(school);
     }
 
-    public static <T> T get(Class c) {
-        return (T)objects.get(c);
-    }
+	public static List<School> getSchoolObjectList() {
+		return schoolObjectList;
+	}
 
+	public static void setSchoolObjectList(List<School> schoolObjectList) {
+		Registry.schoolObjectList = schoolObjectList;
+	}
 }

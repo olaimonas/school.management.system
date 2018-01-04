@@ -4,6 +4,7 @@ import school.management.system.factory.SchoolFactory;
 import school.management.system.util.impl.IdGenerator;
 import school.management.system.model.School;
 import school.management.system.model.Student;
+import school.management.system.model.Subject;
 import school.management.system.model.Teacher;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class SchoolFactoryImpl implements SchoolFactory {
 
         // Teachers
         IntStream.range(0, numTeachers)
-                .forEach(i -> teacherList.add(personFactory.createTeacher("Teacher " + i, "Teacher " + i)));
+                .forEach(i -> teacherList.add(personFactory.createTeacher("Teacher " + i, "Teacher " + i, Subject.MATHS)));
 
         // Students
         IntStream.range(0, numStudents)

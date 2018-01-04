@@ -1,8 +1,8 @@
 package school.management.system.factory.impl;
 
 import school.management.system.factory.PersonFactory;
-import school.management.system.util.impl.IdGenerator;
 import school.management.system.model.Student;
+import school.management.system.model.Subject;
 import school.management.system.model.Teacher;
 
 public class PersonFactoryImpl implements PersonFactory {
@@ -18,12 +18,12 @@ public class PersonFactoryImpl implements PersonFactory {
     }
 
     @Override
-    public Teacher createTeacher(String name, String surname, String id) {
-        return new Teacher(name, surname, id);
+    public Teacher createTeacher(String name, String surname, String id, Subject subject) {
+        return new Teacher(name, surname, id, subject);
     }
 
     @Override
-    public Teacher createTeacher(String name, String surname) {
-        return new Teacher(name, surname);
+    public Teacher createTeacher(String name, String surname, Subject subject) {
+        return new Teacher(name, surname, subject);
     }
 }

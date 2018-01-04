@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class PropertiesConfig {
 
-    public String getInsufficientProfitMessage() {
+    public String getExceptionMessage(String message) {
 
         Properties properties = new Properties();
 
@@ -17,11 +17,11 @@ public class PropertiesConfig {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return properties.getProperty("insufficientProfitMessage");
+            return properties.getProperty(message);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return properties.getProperty("insufficientProfitMessage");
+        return properties.getProperty(message);
     }
 
 }

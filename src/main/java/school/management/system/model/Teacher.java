@@ -11,12 +11,14 @@ public class Teacher extends Person {
     private Subject subject;
     private int yearsOfExperience;
 
-    public Teacher(String name, String surname, String id) {
+    public Teacher(String name, String surname, String id, Subject subject) {
         super(name, surname, id);
+        this.subject = subject;
     }
 
-    public Teacher(String name, String surname) {
+    public Teacher(String name, String surname, Subject subject) {
         super(name, surname);
+        this.subject = subject;
     }
 
     @Override

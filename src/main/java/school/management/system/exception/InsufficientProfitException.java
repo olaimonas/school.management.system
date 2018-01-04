@@ -4,7 +4,12 @@ import school.management.system.util.impl.PropertiesConfig;
 
 public class InsufficientProfitException extends RuntimeException {
 
-    private static String message = new PropertiesConfig().getInsufficientProfitMessage(); //"Sorry folks, you are not getting any salary this month. Our profit is not sufficient!";
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private static String message = new PropertiesConfig().getExceptionMessage("insufficientProfitMessage");
 
     public InsufficientProfitException() {
         this(message);

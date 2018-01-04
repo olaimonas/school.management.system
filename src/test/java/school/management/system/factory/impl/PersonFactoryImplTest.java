@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import school.management.system.factory.PersonFactory;
 import school.management.system.model.Student;
+import school.management.system.model.Subject;
 import school.management.system.model.Teacher;
 
 public class PersonFactoryImplTest {
@@ -30,7 +31,7 @@ public class PersonFactoryImplTest {
     @Test
     // Enter your own Id
     public void createTeacher() {
-    	Teacher mrStrict = personFactory.createTeacher("Strict", "Bastard", "6666");
+    	Teacher mrStrict = personFactory.createTeacher("Strict", "Bastard", "6666", Subject.MATHS);
     	Assert.assertEquals("Strict", mrStrict.getName());
     	Assert.assertEquals("Bastard", mrStrict.getSurname());
     	Assert.assertEquals("6666", mrStrict.getId());
