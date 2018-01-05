@@ -19,6 +19,7 @@ public class RegistryTest {
 		Registry.add(third);
 		
 		Assert.assertNotNull(Registry.getSchoolObjectList());
+		Assert.assertEquals(Registry.getSchoolObjectList().get(2).toString(), "Third");
 	}
 
 }

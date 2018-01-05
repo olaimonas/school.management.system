@@ -3,6 +3,7 @@ package school.management.system.persistence;
 import java.util.List;
 
 import school.management.system.ctx.Registry;
+import school.management.system.exception.NoStipendException;
 import school.management.system.exception.NoSuchSchoolException;
 import school.management.system.exception.NoSuchStudentException;
 import school.management.system.exception.NoSuchTeacherException;
@@ -22,6 +23,7 @@ public class Persistence {
 				List<Student> students = school.getStudents();
 				for(Student student : students) {
 					if(student.getId().equals(studentId)) {
+						if(student.getStipend() == null) throw new NoStipendException();
 						return student.getStipend();
 					}
 				} throw new NoSuchStudentException();

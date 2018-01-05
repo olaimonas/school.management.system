@@ -1,27 +1,29 @@
 package school.management.system.util.impl;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesConfig {
-
+	
     public String getExceptionMessage(String message) {
 
-        Properties properties = new Properties();
-
-        // How the heck is this first try written?
-        try (InputStream in = this.getClass().getClassLoader().getResourceAsStream("Application.properties")) {
-            try {
-                properties.load(in);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return properties.getProperty(message);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return properties.getProperty(message);
+    	String rootPath = Thread.currentThread().getContextClassLoader().getResource("Application.properties").getPath();
+    	String appConfigPath = rootPath + "Application.properties";
+    	
+        Properties appProps = new Properties();
+        try {
+			appProps.load(new FileInputStream(appConfigPath));
+			return appProps.getProperty(message);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return appProps.getProperty(message);
     }
 
 }
