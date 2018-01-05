@@ -9,7 +9,7 @@ public class InsufficientProfitException extends RuntimeException {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private static String message = PropertiesConfig.readKey(PropertiesConfig.getPropertiesFilename(), "insufficientProfitMessage");
+	private static String message = PropertiesConfig.readKey(PropertiesConfig.PROPERTIES_FILENAME, "insufficientProfitMessage");
 
     public InsufficientProfitException() {
         this(message);

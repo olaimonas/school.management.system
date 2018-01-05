@@ -1,8 +1,11 @@
 package service;
 
 import school.management.system.model.Subject;
+import school.management.system.persistence.Persistence;
 
 public class TeacherServiceImpl implements TeacherService {
+
+	Persistence persistence = new Persistence();
 	
 	public Subject getSubject(String schoolId, String teacherId) {
 		return persistence.returnSubject(schoolId, teacherId);

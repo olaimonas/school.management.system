@@ -4,6 +4,8 @@ import school.management.system.model.Money;
 import school.management.system.persistence.Persistence;
 
 public class StudentServiceImpl implements StudentService {
+
+	Persistence persistence = new Persistence();
 		
 	@Override
 	public Money getStipend(String schoolId, String studentId) {
