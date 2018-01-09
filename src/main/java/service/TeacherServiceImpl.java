@@ -1,22 +1,22 @@
 package service;
 
 import school.management.system.model.Subject;
-import school.management.system.persistence.Persistence;
+import school.management.system.repository.TeacherRepositoryImpl;
 
 public class TeacherServiceImpl implements TeacherService {
 
-	Persistence persistence = new Persistence();
+	TeacherRepositoryImpl teacherRepositoryImpl = new TeacherRepositoryImpl();
 	
 	public Subject getSubject(String schoolId, String teacherId) {
-		return persistence.returnSubject(schoolId, teacherId);
+		return teacherRepositoryImpl.getSubject(schoolId, teacherId);
 	}
 	
 	public String getName(String schoolId, String teacherId) {
-		return persistence.returnTeacherName(schoolId, teacherId);
+		return teacherRepositoryImpl.getTeacherName(schoolId, teacherId);
 	}
 	
 	public String getId(String schoolId, String name, String surname) {
-		return persistence.returnTeacherId(schoolId, name, surname);
+		return teacherRepositoryImpl.getTeacherId(schoolId, name, surname);
 	}
 
 }

@@ -1,25 +1,28 @@
 package service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import school.management.system.model.Money;
-import school.management.system.persistence.Persistence;
+import school.management.system.repository.StudentRepository;
+import school.management.system.repository.StudentRepositoryImpl;
 
 public class StudentServiceImpl implements StudentService {
 
-	Persistence persistence = new Persistence();
+	@Autowired
+	private StudentRepository studentRepositoryImpl;
 		
 	@Override
 	public Money getStipend(String schoolId, String studentId) {
-		return persistence.returnStipend(schoolId, studentId);
+		return studentRepositoryImpl.getStipend(schoolId, studentId);
 	}
 	
 	@Override
 	public String getName(String schoolId, String studentId) {
-		return persistence.returnStudentName(schoolId, studentId);
+		return studentRepositoryImpl.getStudentName(schoolId, studentId);
 	}
 	
 	@Override
 	public String getId(String schoolId, String name, String surname) {
-		return persistence.returnStudentId(schoolId, name, surname);
+		return studentRepositoryImpl.getStudentId(schoolId, name, surname);
 	}
 
 }

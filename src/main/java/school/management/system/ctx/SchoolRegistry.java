@@ -5,7 +5,7 @@ import java.util.List;
 
 import school.management.system.model.School;
 
-public class Registry {
+public class SchoolRegistry {
 
     private static List<School> schoolObjectList = new ArrayList<>();
 
@@ -18,6 +18,6 @@ public class Registry {
 	}
 
 	public static void setSchoolObjectList(List<School> schoolObjectList) {
-		Registry.schoolObjectList = schoolObjectList;
+		SchoolRegistry.schoolObjectList = schoolObjectList;
 	}
 }
