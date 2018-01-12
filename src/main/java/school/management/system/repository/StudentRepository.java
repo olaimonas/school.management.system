@@ -8,8 +8,8 @@ public interface StudentRepository {
     Money getStipend(String schoolId, String studentId);
 
     // Return a student's name and surname according to provided Id
-    String getStudentName(String schoolId, String studentId);
+    String getName(String schoolId, String studentId);
 
     // Return a student's Id according to provided School ID, student's name and surname
-    String getStudentId(String schoolId, String name, String surname);
+    String getId(String schoolId, String name, String surname);
 }

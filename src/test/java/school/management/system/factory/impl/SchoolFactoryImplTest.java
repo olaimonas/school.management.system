@@ -3,9 +3,8 @@ package school.management.system.factory.impl;
 import org.junit.Test;
 import school.management.system.factory.SchoolFactory;
 import school.management.system.model.School;
-import school.management.system.util.impl.IdGenerator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class SchoolFactoryImplTest {
 

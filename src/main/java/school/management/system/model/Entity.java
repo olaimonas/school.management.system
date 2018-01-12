@@ -8,7 +8,7 @@ public abstract class Entity implements IdGenerator {
     private String id;
 
     public Entity() {
-    	id = generateId();
+        id = generateId();
     }
 
     public Entity(String id) {
@@ -17,7 +17,7 @@ public abstract class Entity implements IdGenerator {
 
     // Id should not be shorter than 4 symbols. It's because ID has 3 symbols (letters) by default + it should get at least 1-digit random integer. The following method performs this check
     private void validateId(String id) {
-        if(id == null || id.length() < 4) throw new InvalidIdException();
+        if (id == null || id.length() < 4) throw new InvalidIdException();
         this.id = id;
     }
 

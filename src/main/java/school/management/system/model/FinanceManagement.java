@@ -1,10 +1,11 @@
 package school.management.system.model;
 
+import org.springframework.stereotype.Component;
 import school.management.system.exception.InsufficientProfitException;
-import school.management.system.util.impl.IdGenerator;
 
 import java.math.BigDecimal;
 
+@Component
 public class FinanceManagement extends Department {
 
     private Money totalIncome = new Money(0);
@@ -26,7 +27,7 @@ public class FinanceManagement extends Department {
     // Use only to count the profit
     private Money updateProfit() {
         profit = getTotalIncome().minus(getTotalExpenses());
-        if(profit.getAmount().compareTo(BigDecimal.ZERO) < 0) {
+        if (profit.getAmount().compareTo(BigDecimal.ZERO) < 0) {
             throw new InsufficientProfitException();
         }
         return profit;

@@ -1,5 +1,6 @@
 package school.management.system.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import school.management.system.ctx.SchoolRegistry;
 import school.management.system.util.impl.IdGenerator;
 
@@ -7,8 +8,12 @@ import java.util.List;
 
 public class School extends Entity {
 
-    private Administration administration = new Administration();
-    private FinanceManagement financeManagement = new FinanceManagement();
+    @Autowired
+    private Administration administration;
+
+    @Autowired
+    private FinanceManagement financeManagement;
+
     private String name;
     private List<Teacher> teachers;
     private List<Student> students;
@@ -19,10 +24,10 @@ public class School extends Entity {
         this.students = students;
         SchoolRegistry.add(this);
     }
-    
+
     public School(String name) {
-    	this.name = name;
-    	SchoolRegistry.add(this);
+        this.name = name;
+        SchoolRegistry.add(this);
     }
 
     @Override

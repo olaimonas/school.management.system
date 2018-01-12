@@ -5,21 +5,23 @@ import org.junit.Test;
 import school.management.system.model.School;
 import school.management.system.model.Subject;
 import school.management.system.model.Teacher;
+import school.management.system.repository.TeacherRepository;
+import school.management.system.repository.TeacherRepositoryImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeacherServiceTest {
+public class TeacherRepositoryTest {
 
     @Test
     public void teacherServiceTest() {
-        TeacherService teacherService = new TeacherServiceImpl();
+        TeacherRepository teacherRepository = new TeacherRepositoryImpl();
         Teacher teacher = new Teacher("Mister", "Dork", "TCH666", Subject.ART);
         List<Teacher> teachers = new ArrayList<>();
         teachers.add(teacher);
         School school = new School("DorkSchool", teachers, null);
-        Assert.assertEquals("TCH666", teacherService.getId(school.getId(), "Mister", "Dork"));
-        Assert.assertEquals("Mister Dork", teacherService.getName(school.getId(), "TCH666"));
+        Assert.assertEquals("TCH666", teacherRepository.getId(school.getId(), "Mister", "Dork"));
+        Assert.assertEquals("Mister Dork", teacherRepository.getName(school.getId(), "TCH666"));
     }
 
 }

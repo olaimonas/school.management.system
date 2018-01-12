@@ -8,8 +8,8 @@ public interface TeacherRepository {
     Subject getSubject(String schoolId, String teacherId);
 
     // Return a teacher's name and surname according to provided ID
-    String getTeacherName(String schoolId, String teacherId);
+    String getName(String schoolId, String teacherId);
 
     // Return a teacher's ID according to provided School Id, teacher's name and surname
-    String getTeacherId(String schoolId, String name, String surname);
+    String getId(String schoolId, String name, String surname);
 }

@@ -3,8 +3,6 @@ package school.management.system.model;
 import school.management.system.exception.InvalidGradeException;
 import school.management.system.util.impl.IdGenerator;
 
-import java.math.BigDecimal;
-
 public class Teacher extends Person {
 
     private Money salary;
@@ -27,7 +25,7 @@ public class Teacher extends Person {
     }
 
     public void setStudentGrade(Student student, int grade) {
-        if(grade < 1 || grade > 10) {
+        if (grade < 1 || grade > 10) {
             throw new InvalidGradeException();
         } else {
             student.setGrade(grade);

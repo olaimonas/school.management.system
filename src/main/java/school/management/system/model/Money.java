@@ -15,9 +15,9 @@ public class Money {
         currency = Currency.getInstance(currentLocale);
         this.amount = new BigDecimal(amount);
     }
-    
+
     public Money(BigDecimal amount) {
-    	currentLocale = Locale.getDefault();
+        currentLocale = Locale.getDefault();
         currency = Currency.getInstance(currentLocale);
         this.amount = amount;
     }
@@ -29,37 +29,37 @@ public class Money {
     public Money minus(Money amount) {
         return new Money(this.getAmount().subtract(amount.getAmount()));
     }
-    
+
     public Money multiply(Money amount) {
-    	return new Money(this.getAmount().multiply(amount.getAmount()));
+        return new Money(this.getAmount().multiply(amount.getAmount()));
     }
-    
+
     public Money divide(Money amount) {
-    	return new Money(this.getAmount().divide(amount.getAmount()));
+        return new Money(this.getAmount().divide(amount.getAmount()));
     }
 
-	public Locale getCurrentLocale() {
-		return currentLocale;
-	}
+    public Locale getCurrentLocale() {
+        return currentLocale;
+    }
 
-	public void setCurrentLocale(Locale currentLocale) {
-		this.currentLocale = currentLocale;
-	}
+    public void setCurrentLocale(Locale currentLocale) {
+        this.currentLocale = currentLocale;
+    }
 
-	public Currency getCurrency() {
-		return currency;
-	}
+    public Currency getCurrency() {
+        return currency;
+    }
 
-	public void setCurrency(Currency currency) {
-		this.currency = currency;
-	}
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
 
-	public BigDecimal getAmount() {
-		return amount;
-	}
+    public BigDecimal getAmount() {
+        return amount;
+    }
 
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
 
 }

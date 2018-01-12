@@ -1,7 +1,6 @@
 package school.management.system.factory.impl;
 
 import school.management.system.factory.SchoolFactory;
-import school.management.system.util.impl.IdGenerator;
 import school.management.system.model.School;
 import school.management.system.model.Student;
 import school.management.system.model.Subject;

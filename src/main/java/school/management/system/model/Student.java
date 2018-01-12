@@ -54,22 +54,22 @@ public class Student extends Person {
     }
 
     public Money getTotalFeesPaid() {
-		return totalFeesPaid;
-	}
+        return totalFeesPaid;
+    }
 
-	public void setTotalFeesPaid(Money totalFeesPaid) {
-		this.totalFeesPaid = totalFeesPaid;
-	}
+    public void setTotalFeesPaid(Money totalFeesPaid) {
+        this.totalFeesPaid = totalFeesPaid;
+    }
 
-	public Money getStipend() {
-		return stipend;
-	}
+    public Money getStipend() {
+        return stipend;
+    }
 
-	public void setStipend(Money stipend) {
-		this.stipend = stipend;
-	}
+    public void setStipend(Money stipend) {
+        this.stipend = stipend;
+    }
 
-	@Override
+    @Override
     public String toString() {
         return "Student " + getName() + " " + getSurname() + ", id " + getId() + ".";
     }

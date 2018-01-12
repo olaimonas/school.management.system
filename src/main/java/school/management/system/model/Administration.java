@@ -1,5 +1,8 @@
 package school.management.system.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Administration extends Department {
 
     private int numberOfTeachers;
