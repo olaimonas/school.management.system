@@ -10,22 +10,36 @@ import school.management.system.repository.StudentRepositoryImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
 public class StudentRepositoryTest {
 
-//    @Autowired
-//    private StudentService studentService;
-
     @Test
-    public void studentRepositoryTest() {
+    public void idTest() {
         StudentRepository studentRepository = new StudentRepositoryImpl();
         Student student = new Student("Ockarik", "Zadrot", "STD333");
         List<Student> students = new ArrayList<>();
         students.add(student);
         School school = new School("JavaSchool", null, students);
         Assert.assertEquals("STD333", studentRepository.getId(school.getId(), "Ockarik", "Zadrot"));
+    }
+
+    @Test
+    public void nameAndSurnameTest() {
+        StudentRepository studentRepository = new StudentRepositoryImpl();
+        Student student = new Student("Ockarik", "Zadrot", "STD333");
+        List<Student> students = new ArrayList<>();
+        students.add(student);
+        School school = new School("JavaSchool", null, students);
         Assert.assertEquals("Ockarik Zadrot", studentRepository.getName(school.getId(), "STD333"));
+    }
+
+    @Test
+    public void stipendTest() {
+        StudentRepository studentRepository = new StudentRepositoryImpl();
+        Student student = new Student("Ockarik", "Zadrot", "STD333");
+        List<Student> students = new ArrayList<>();
+        students.add(student);
+        School school = new School("JavaSchool", null, students);
+        Assert.assertNotNull(student.getStipend());
     }
 
 }

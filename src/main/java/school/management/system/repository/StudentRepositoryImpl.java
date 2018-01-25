@@ -16,6 +16,7 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     public Money getStipend(String schoolId, String studentId) {
         for (int i = 0; i < SchoolRegistry.getSchoolObjectList().size(); i++) {
+            SchoolRegistry.getSchoolObjectList().stream().forEach(school -> school.getId().equals(schoolId));
             School school = SchoolRegistry.getSchoolObjectList().get(i);
             if (school.getId().equals(schoolId)) {
                 List<Student> students = school.getStudents();

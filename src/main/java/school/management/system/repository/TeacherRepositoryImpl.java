@@ -13,7 +13,6 @@ import java.util.List;
 @Service
 public class TeacherRepositoryImpl implements TeacherRepository {
 
-    // Return a teacher's subject according to provided School and Teacher ID
     public Subject getSubject(String schoolId, String teacherId) {
         for (int i = 0; i < SchoolRegistry.getSchoolObjectList().size(); i++) {
             School school = SchoolRegistry.getSchoolObjectList().get(i);
@@ -30,7 +29,6 @@ public class TeacherRepositoryImpl implements TeacherRepository {
         throw new NoSuchSchoolException();
     }
 
-    // Return a teacher's name and surname according to provided ID
     public String getName(String schoolId, String teacherId) {
         for (int i = 0; i < SchoolRegistry.getSchoolObjectList().size(); i++) {
             School school = SchoolRegistry.getSchoolObjectList().get(i);
@@ -47,7 +45,6 @@ public class TeacherRepositoryImpl implements TeacherRepository {
         throw new NoSuchSchoolException();
     }
 
-    // Return a teacher's ID according to provided School Id, teacher's name and surname
     public String getId(String schoolId, String name, String surname) {
         for (int i = 0; i < SchoolRegistry.getSchoolObjectList().size(); i++) {
             School school = SchoolRegistry.getSchoolObjectList().get(i);
